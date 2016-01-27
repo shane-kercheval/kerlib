@@ -3,21 +3,22 @@
 
 import logging
 import os
-import sys
-import kerlib
-from PIL import Image
-from random import randint
-import pep8
-import subprocess
 import unittest
+from random import randint
+
+import pep8
+from PIL import Image
+
+import kerlib
+
 
 class KerlibTests(unittest.TestCase):
 
     def setUp(self):
         # define instructions that will be executed before each test method
         # we can do stuff like 'self.customvariable = <custom value>'
-        self.image_path = "pablo.png"
-        self.new_image_path = "pablo-out.png"
+        self.image_path = "test_files/pablo.png"
+        self.new_image_path = "test_files/pablo-out.png"
 
 
     #def tearDown(self):
@@ -43,7 +44,7 @@ class KerlibTests(unittest.TestCase):
     def test_pep8(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide()
-        result = pep8style.check_files(['kerlib.py'])
+        result = pep8style.check_files(['kerlib/gmail.py', 'kerlib/image.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
