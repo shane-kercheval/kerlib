@@ -7,8 +7,14 @@ from PIL import ImageDraw
 def create_image_with_text(image_path="hello.png", text="test"):
     image_width, image_height = (300, 200)
     with Image.new("RGBA", (image_width, image_height), "yellow") as image:
-        image.save(image_path, "PNG")
-    add_text_to_image(image_path, text, image_font_size=20, fontColor="red")
+        png = "temp_imageasadfasfasdfasdfsadf.png"
+        image.save(png, "PNG")
+    add_text_to_image(png,
+                      text,
+                      new_image_path=image_path,
+                      image_font_size=20,
+                      font_color="red")
+    os.remove(png)
 
 
 def add_text_to_image(image_path, text,

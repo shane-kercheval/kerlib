@@ -40,7 +40,14 @@ class KerlibTests(unittest.TestCase):
         print('name of file ' + self.new_image_path)
         print('random number of image: ' + str(random_number))
         assert os.path.isfile(self.new_image_path)
-        
+
+    def test_create_image_with_text(self):
+        kerlib.create_image_with_text()
+        assert os.path.isfile("hello.png")
+        os.remove("hello.png")
+        assert not os.path.isfile("hello.png")
+
+
     def test_pep8(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide()
