@@ -15,7 +15,7 @@ from os import path
 from pip.req import parse_requirements
 
 # parse_requirements() returns generator of pip.req.InstallRequirement objects
-install_reqs = parse_requirements('requirements.txt')
+install_reqs = parse_requirements('requirements.txt', session=False)
 
 # reqs is a list of requirement
 reqs = [str(ir.req) for ir in install_reqs]
@@ -33,7 +33,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.0.0',
+    version='1.0.1',
 
     description='A collection of helper functions',
     long_description=long_description,
@@ -58,7 +58,7 @@ setup(
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
-        'Topic :: Python :: Random Tools',
+        'Topic :: Software Development :: Libraries :: Python Modules',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: MIT License',
