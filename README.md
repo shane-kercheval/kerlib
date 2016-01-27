@@ -1,8 +1,7 @@
 kerlib - personal python utility library
 ------
-
+- alpha / not stable
 
 installation
 -----------
-- download source
-- pip install -r requirements.txt
+- pip install kerlib
